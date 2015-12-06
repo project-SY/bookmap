@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root "bookmarks#index"
 
-  post "index" => "bookmarks#create"
+  get 'index' => 'bookmarks#new'
+
+  post 'index' => 'bookmarks#create'
+
+  # post "index" => "bookmarks#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
