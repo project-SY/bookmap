@@ -32,13 +32,21 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# gem 追加
+# gem 追加 ---------------------------------
+# debug系
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pry-byebug'
 gem 'awesome_print'
 # user認証
 gem 'devise'
+
+# angularjs 関連
+gem 'jquery-turbolinks'
+
+# スクレイピング
+gem 'nokogiri'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
