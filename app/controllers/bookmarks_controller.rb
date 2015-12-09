@@ -6,6 +6,18 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
+    binding.pry
+
+    agent = Mechanize.new
+    scraping_url = @bookmark.url
+    binding.pry
+    page = agent.get(scraping_url)
+    binding.pry
+    elements = page.search('title')
+    binding.pry
+    @bookmark.title = elements
+    binding.pry
+
 
     respond_to do |format|
       if @bookmark.save
@@ -16,9 +28,6 @@ class BookmarksController < ApplicationController
         format.json { render json: @bookmark.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def search
   end
 
   private
