@@ -203,6 +203,7 @@ DEPENDENCIES
   jquery-turbolinks
   mechanize
   mysql2 (~> 0.3.20)
+  nokogiri
   pry-byebug
   rails (= 4.2.0)
   sass-rails (~> 5.0)

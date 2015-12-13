@@ -6,18 +6,14 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    binding.pry
 
+    require "mechanize"
     agent = Mechanize.new
     scraping_url = @bookmark.url
-    binding.pry
     page = agent.get(scraping_url)
-    binding.pry
-    elements = page.search('title')
-    binding.pry
+    elements = agent.page.search("title").text
     @bookmark.title = elements
     binding.pry
-
 
     respond_to do |format|
       if @bookmark.save

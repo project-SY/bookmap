@@ -47,6 +47,7 @@ gem 'jquery-turbolinks'
 # スクレイピング
 # gem 'nokogiri'
 gem 'mechanize'
+gem 'nokogiri'
 
 # gem end ------------------------------------
 
