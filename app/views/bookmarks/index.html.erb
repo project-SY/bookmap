@@ -1,2 +1,19 @@
 <h1>新規作成</h1>
 <%= render 'form' %>
+
+<div class="index-link-area">
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+      <li>
+        <a href="">
+          <h4>
+            <%= bookmark.title %>
+          </h4>
+          <p>
+            <%= bookmark.description %>
+          </p>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

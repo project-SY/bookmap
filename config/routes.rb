@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pages
+
   root "bookmarks#index"
   resources :bookmarks
   devise_for :users

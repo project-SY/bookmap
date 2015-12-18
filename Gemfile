@@ -38,6 +38,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pry-byebug'
 gem 'awesome_print'
+gem 'annotate'
 # user認証
 gem 'devise'
 
@@ -48,6 +49,9 @@ gem 'jquery-turbolinks'
 # gem 'nokogiri'
 gem 'mechanize'
 gem 'nokogiri'
+
+# ページング
+gem 'kaminari'
 
 # gem end ------------------------------------
 
