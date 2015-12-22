@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   def index
-  	@bookmarks = Bookmark.all
+  	@bookmarks = Bookmark.order(created_at: :desc)
     @bookmark = Bookmark.new
   end
 
@@ -13,7 +13,6 @@ class BookmarksController < ApplicationController
     page = agent.get(scraping_url)
     elements = agent.page.search("title").text
     @bookmark.title = elements
-    binding.pry
 
     respond_to do |format|
       if @bookmark.save
