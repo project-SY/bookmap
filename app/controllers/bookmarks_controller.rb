@@ -11,8 +11,10 @@ class BookmarksController < ApplicationController
     agent = Mechanize.new
     scraping_url = @bookmark.url
     page = agent.get(scraping_url)
-    elements = agent.page.search("title").text
-    @bookmark.title = elements
+    page_title = agent.page.search("title").text
+    page_og_image = agent.page.search("meta").xpath("//meta[@property='og:image']/@content")
+    @bookmark.title = page_title
+    @bookmark.og_image = page_og_image 
 
     respond_to do |format|
       if @bookmark.save
@@ -27,6 +29,6 @@ class BookmarksController < ApplicationController
 
   private
   def bookmark_params
-    params.require(:bookmark).permit(:title, :url, :description)
+    params.require(:bookmark).permit(:title, :url, :description, :og_image)
   end
 end
